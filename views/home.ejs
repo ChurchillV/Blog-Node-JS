@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+   <!-- Head -->
+<head>
+   <%-  include('./partials/head.ejs')  %>
+</head>
+   <!-- Head End -->
+   <body>
+      <!-- Navbar -->
+   <%- include('./partials/navbar1.ejs')  %>
+         </nav>
+         <!-- Navbar Ends -->
+
+   <div class="container">
+   
+
+      <!-- Blog Desc -->
+      <%- include('./partials/blog_desc.ejs') %>
+      <!-- Blog Desc Ends -->
+      
+      <!-- Row Start -->
+         <div class="row">
+            
+            <!-- EJS -->
+
+            <% if (blogs.length > 0) { %>
+               <% blogs.forEach(blog => { %>
+                  <div class="col-lg-4 col-md-6 col-md-12 mb-5">
+                     <div class="card md-5 shadow-sm">
+                        <img src="./images copy/1.jpg" alt="pic">
+                        <div class="card-body">
+                           <div class="card-title">
+                              <h2><%= blog.title %></h2>
+                           </div>
+                           <div class="card-text">
+                              <p>
+                                 <%= blog.summary %>
+                              </p>
+                           </div>
+                           <a href="/blogs/<%= blog._id %>" class="btn btn-outline-primary">Read more</a>
+                           <a class="text-secondary delete" data-doc="<%= blog._id %>">
+                              <i class="bi bi-trash mx-2"></i>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+              <%  })  %>
+            <% } %>
+
+         </div>
+      <!-- Row End -->
+      
+   </div>
+
+   <!-- Footer -->
+   <%-  include('./partials/footer.ejs')  %>
+   <!-- Footer Ends -->
+
+   <!-- JavaScript code for delete request -->
+   <script>
+      const subtract = document.querySelector('a.text-secondary.delete')
+   
+      subtract.addEventListener('click', (e)=> {
+         const endpoint = `/blogs/${subtract.dataset.doc}`
+   
+         fetch( endpoint, {
+            method: 'DELETE'
+         })
+         .then((response) => response.json())
+         .then((data) => window.location.href = data.redirect)
+         .catch((err) => console.log(err))
+      })
+   </script>
+</body>
+</html>

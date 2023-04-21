@@ -1,0 +1,49 @@
+h3 {
+   text-align: center;
+   margin-top: 5%;
+}
+
+form {
+   border: 1px solid rgb(188, 188, 188);
+   box-shadow: 3px 7px 11px -3px rgba(117,108,108,0.75);
+   -webkit-box-shadow: 3px 7px 11px -3px rgba(117,108,108,0.75);
+   -moz-box-shadow: 3px 7px 11px -3px rgba(117,108,108,0.75);
+   border-radius: 20px;
+   padding: 5%;
+}
+
+.form-group {
+   margin-bottom: 20px;
+}
+
+form input[type="submit"] {
+   width: 50%;
+   margin-left: 25%;
+   border-radius: 20px;
+   box-shadow: 3px 7px 11px -3px rgba(117,108,108,0.75);
+   -webkit-box-shadow: 3px 7px 11px -3px rgba(117,108,108,0.75);
+   -moz-box-shadow: 3px 7px 11px -3px rgba(117,108,108,0.75);
+}
+
+form input[type="text"] {
+   border-radius: 40px;
+}
+
+form label {
+   font-size: 1.5rem;
+}
+
+nav {
+   box-shadow: 1px 7px 11px -3px rgba(117,108,108,0.75);
+   -webkit-box-shadow: 1px 7px 11px -3px rgba(117,108,108,0.75);
+   -moz-box-shadow: 1px 7px 11px -3px rgba(117,108,108,0.75);
+   width: 100%;
+   padding-left: 5%;
+   padding-right: 5%;
+}
+
+.bi.bi-trash.mx-2:hover {
+   color: brown;
+   transition-delay: .1s;
+   cursor: pointer;
+}

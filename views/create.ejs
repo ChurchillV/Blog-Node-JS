@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%-  include('./partials/head2.ejs')  %>
+</head>
+<body>
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-md navbar-light border-bottom border-warning sticky-top bg-light">
+
+ <%- include('./partials/navbar2.ejs') %>
+
+   </nav>   
+   <!-- Navbar Ends -->
+   <div class="container">
+   
+
+         <!-- Form -->
+            <div class="login">
+               <br/>
+               <h3>What's on Your Mind?</h3>
+               <br/>
+
+               <form action="/" method="post" class="mb-5">
+
+                  <div class="form-group mb-5">
+                     <label for="title" class="form-label">Title:</label>
+                     <input type="text" name="title" id="title" class="form-control" placeholder="What's the name of your Article?" required>
+                  </div>
+                  <div class="form-group mb-5">
+                     <label for="title" class="form-label">Summary:</label>
+                     <input type="text" name="summary" id="summary" placeholder="What's your article about?" class="form-control" required>
+                  </div>
+                  <div class="form-group mb-5">
+                     <label for="body" class="form-label">Article Body:</label>
+                     <textarea name="body" id="" cols="30" rows="10" class="form-control" placeholder="Express yourself ;- )" required></textarea>
+                  </div>
+                  
+                  <input type="submit" value="SUBMIT" class="btn btn-warning text-dark">
+               </form>
+            </div>
+   </div>         
+         <!-- Form Ends-->
+
+          <!-- Footer -->
+   <%- include('./partials/footer.ejs') %>
+   <!-- Footer Ends -->
+         
+</body>
+</html>
