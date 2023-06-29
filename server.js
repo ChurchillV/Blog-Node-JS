@@ -16,8 +16,6 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 
-
-
 //Basic routes
 app.get('/', (req,res) => {
    Log.find().sort({ createdAt: -1 })
@@ -29,8 +27,6 @@ app.get('/', (req,res) => {
       })
    });
 
-
-
 app.delete('/blogs/:id', (req,res) => {
    const id = req.params.id
 
@@ -41,11 +37,9 @@ app.delete('/blogs/:id', (req,res) => {
       .catch((err) => console.log(err))
 })
 
-
 app.get('/blogs/create', (req,res) => {
    res.render('create', {title: "Create BlogPost"})
 })
-
 
 app.get('/blogs/:id', (req,res) => {
    const id = req.params.id
@@ -56,8 +50,6 @@ app.get('/blogs/:id', (req,res) => {
       })
       .catch((err) => console.log(err))
    })
-
-
 
 app.post('/',(req,res) => {
    const log = new Log(req.body)
@@ -71,10 +63,7 @@ app.post('/',(req,res) => {
       })
 })
 
-   
 //For pages unfound/non-existent
 app.use((req,res) => {
    res.send('<h1>Page not found</h1>')
 })
-
-
